@@ -18,10 +18,13 @@ class MostViewedContainer extends Component {
     .then(data => this.setState({mostViewed: data.results}))
   }
 
+  componentDidMount(){
+    this.fetchMostViewed()
+  }
+
   render(){
     return(
       <div>
-        <button onClick={this.fetchMostViewed}>Click Me</button>
         <MostViewedList mostViewed={this.state.mostViewed}/>
       </div>
     )
