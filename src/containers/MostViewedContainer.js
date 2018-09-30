@@ -12,6 +12,7 @@ class MostViewedContainer extends Component {
   }
 
    fetchMostViewed = () => {
+     // possible move to an env file
      fetch(`${uri}/svc/mostpopular/v2/mostshared/technology/30.json?
     &api-key=f98593a095b44546bf4073744b540da0`)
     .then(resp => resp.json())
