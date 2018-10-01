@@ -1,10 +1,11 @@
 import React, { Component }from 'react';
+import TechView from './TechView'
 
 
 
 class TechViewList extends Component {
 
-  const renderTechStories = (){
+  renderTechStories = () => {
     return this.props.techStories.map((tech, idx) => <TechView key={idx} tech={tech}/>)
   };
 
@@ -13,9 +14,11 @@ class TechViewList extends Component {
     return(
       <div>
         <h1>Tech Stories</h1>
-        {this.renderTechStories}
+        {this.renderTechStories()}
       </div>
     )
   }
 
 };
+
+export default TechViewList;
