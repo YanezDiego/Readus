@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class MostViewed extends Component{
+const MostViewed = (props) =>{
 
-  render(){
     return(
-      <div key={this.props.article.asset_id}>
-        <h2><a target='_blank' href={`${this.props.article.url}`}>{this.props.article.title}</a></h2>
-        <p>{this.props.article.abstract}</p><span>Total Shares: {this.props.article.total_shares}</span>
+      <div key={props.article.asset_id}>
+        <h2><a target='_blank' href={`${props.article.url}`}>{props.article.title}</a></h2>
+        <p>{props.article.abstract}</p><span>Total Shares: {props.article.total_shares}</span>
       </div>
     )
-  }
-}
+};
+
 
 export default MostViewed;
