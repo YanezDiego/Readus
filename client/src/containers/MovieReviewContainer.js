@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import MovieReviewList from '../components/movieReview/MovieReviewList'
 
 const uri = `https://api.nytimes.com`;
 
