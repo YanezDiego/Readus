@@ -12,6 +12,7 @@ const TechView = (props) => {
   return(
     <div key={props.tech.idx}>
       <h2><a href={`${props.tech.url}`}>{props.tech.title}</a></h2>
+      <img src={`${props.tech.multimedia[3].url}`}/>
       <p>{props.tech.abstract}</p>
       <p>{props.tech.byline}</p>
     </div>
