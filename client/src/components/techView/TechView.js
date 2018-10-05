@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
 
-const TechView = (props) => {
-
-  // let img = props.tech.multimedia.filter(img =>{return Object.values(img)})
-  // let normImg = console.log(img.splice(2,1))
-  // img renderign in process
+class TechView  extends Component {
 
 
+  addTechStoriesToApi = () => {
+    console.log(this.props.tech)
+    // fetch(`http://localhost:3001`,{
+    //   method: 'POST'
+    // })
+  }
+
+  render(){
+    let media = this.props.tech.multimedia.map(media => media.url )
+    
   return(
-    <div key={props.tech.idx}>
-      <h2><a href={`${props.tech.url}`}>{props.tech.title}</a></h2>
-      <img src={`${props.tech.multimedia[3].url}`}/>
-      <p>{props.tech.abstract}</p>
-      <p>{props.tech.byline}</p>
+
+    <div key={this.props.tech.idx}>
+      <h2><a href={`${this.props.tech.url}`}>{this.props.tech.title}</a></h2>
+      <img src={`${media[3]}`}/>
+      <p>{this.props.tech.abstract}</p>
+      <p>{this.props.tech.byline}</p>
+      <button onClick={this.addTechStoriesToApi}>Save to Read List</button>
     </div>
   )
+  }
 };
 
 export default TechView;
