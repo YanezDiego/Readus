@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import TechViewList from '../components/techView/TechViewList';
+import { connect } from 'react-redux';
 
-const uri = `https://api.nytimes.com`;
+import TechViewList from '../components/techView/TechViewList';
+import SavedStoriesList from '../components/savedStories/SavedStoriesList'
+import {fetchSavedStories} from '../actions/savedStoriesAction'
 
 
 class TechViewContainer extends Component{
@@ -11,8 +13,8 @@ class TechViewContainer extends Component{
 
 
   fetchTechStories = () => {
-    fetch(`${uri}/svc/topstories/v2/technology.json?
-      &api-key=f98593a095b44546bf4073744b540da0`)
+    fetch(`${process.env.REACT_APP_API_URL}/svc/topstories/v2/technology.json?
+      &api-key=${process.env.REACT_APP_API_KEY}`)
     .then(resp => resp.json())
     .then(data => this.setState({techStories: data.results}))
   };
@@ -25,10 +27,26 @@ class TechViewContainer extends Component{
     return(
       <div>
       <TechViewList techStories={this.state.techStories}/>
+
+      <SavedStoriesList
+        savedStories={this.props.savedStories}
+        fetchSavedStories={this.props.fetchTechStories}/>
       </div>
     );
   }
 
 };
 
-export default TechViewContainer;
+
+
+const mapDispatchToProps = dispatch => {
+  return {fetchSavedStories: dispatch(fetchSavedStories())}
+}
+
+const mapStateToProps = state => {
+  return{
+    savedStories: state.savedStories
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TechViewContainer);
