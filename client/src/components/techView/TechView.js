@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-
+import { addTechStorieToApi } from '../../actions/savedStoriesAction'
+import { connect } from 'react-redux'
 
 
 class TechView  extends Component {
 
 
   addTechStoriesToApi = () => {
-    console.log(this.props.tech)
-    // fetch(`http://localhost:3001`,{
-    //   method: 'POST'
-    // })
+    const { title, abstract, byline, published_date, url} = this.props.tech
+    const bodyObj = {
+      title, abstract, byline, published_date, url
+    }
+    this.props.addTechStorieToApi(bodyObj)
   }
 
   render(){
     let media = this.props.tech.multimedia.map(media => media.url )
-    
+
   return(
 
     <div key={this.props.tech.idx}>
@@ -28,4 +30,4 @@ class TechView  extends Component {
   }
 };
 
-export default TechView;
+export default connect(null, {addTechStorieToApi})(TechView);
