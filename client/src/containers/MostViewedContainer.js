@@ -12,9 +12,8 @@ class MostViewedContainer extends Component {
   };
 
    fetchMostViewed = () => {
-     // possible move to an env
-     fetch(`${uri}/svc/mostpopular/v2/mostshared/technology/30.json?
-    &api-key=f98593a095b44546bf4073744b540da0`)
+     fetch(`${process.env.REACT_APP_API_URL}/svc/mostpopular/v2/mostshared/technology/30.json?
+    &api-key=${process.env.REACT_APP_API_KEY}`)
     .then(resp => resp.json())
     .then(data => this.setState({mostViewed: data.results}))
   };

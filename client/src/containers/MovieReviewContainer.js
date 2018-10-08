@@ -10,8 +10,8 @@ class MovieReviewContainer extends Component {
   };
 
   getMovies = () =>{
-    fetch(`${uri}/svc/movies/v2/reviews/search.json?
-      &api-key=f98593a095b44546bf4073744b540da0`)
+    fetch(`${process.env.REACT_APP_API_URL}/svc/movies/v2/reviews/search.json?
+      &api-key=${process.env.REACT_APP_API_KEY}`)
       .then(resp => resp.json())
       .then(data => this.setState({movies: data.results}))
   };
