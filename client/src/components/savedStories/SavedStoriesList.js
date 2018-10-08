@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-import { connect }
+
+
+
+import SavedStories from './SavedStories'
+
+
 
 class SavedStoriesList extends Component {
 
+
   renderSavedStories = () => {
-    return this.props.savedStories.map(stories => <SavedStories key={stories.id} stories={stories}/>)
+    return this.props.savedStories.map(storie => <SavedStories key={storie.id} storie={storie}/>)
   };
 
   render(){
@@ -17,10 +23,7 @@ class SavedStoriesList extends Component {
   }
 };
 
-const mapStateToProps = state => {
-  return{
-    savedStories: state.savedStories
-  }
-}
 
-export default connect(mapStateToProps)(SavedStoriesList)
+
+
+export default SavedStoriesList;
