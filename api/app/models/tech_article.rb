@@ -1,0 +1,2 @@
+class TechArticle < ApplicationRecord
+end

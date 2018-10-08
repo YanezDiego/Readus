@@ -1,0 +1,2 @@
+class MostViewed < ApplicationRecord
+end
