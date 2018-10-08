@@ -11,6 +11,7 @@ import {
 import Navbar from './components/Navbar'
 import MostViewedContainer from './containers/MostViewedContainer'
 import TechViewContainer from './containers/TechViewContainer'
+import MovieReviewContainer from './containers/MovieReviewContainer'
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Navbar/>
             <Route exact path="/" component={MostViewedContainer} />
             <Route exact path='/techstories' component={TechViewContainer} />
+            <Route exact path='/moviereview' component={MovieReviewContainer} />
           </div>
         </Router>
 
