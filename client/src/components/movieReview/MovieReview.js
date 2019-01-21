@@ -7,12 +7,12 @@ const MovieReview = (props) => {
     <div>
       <h2><a href={`${props.movie.link.url}`}>{props.movie.display_title}</a></h2>
       <p>{props.movie.headline}</p>
-      <MovieImg movie={props.movie}/>
-      {/* <img src={`${props.movie.multimedia.src}`}/> */}
-      <MovieSummary movie={props.movie}/>
-      {/* <p>{props.movie.summary_short}</p>
+      {/* <MovieImg movie={props.movie}/> */}
+      <img src={`${props.movie.multimedia.src}`}/>
+      {/* <MovieSummary movie={props.movie}/> */}
+      <p>{props.movie.summary_short}</p>
       <p>Rated: {`${props.movie.mpaa_rating}`}</p>
-      <p>{props.movie.byline}</p> */}
+      <p>{props.movie.byline}</p>
     </div>
   )
 };
