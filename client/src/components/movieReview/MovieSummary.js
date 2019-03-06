@@ -10,4 +10,5 @@ const MovieSummary = props => {
   )
 }
 
+
 export default MovieSummary

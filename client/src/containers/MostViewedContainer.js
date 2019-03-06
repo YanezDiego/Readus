@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import MostViewedList from '../components/mostViewed/MostViewedList';
 
-const uri = `https://api.nytimes.com`;
-
-
 
 
 class MostViewedContainer extends Component {

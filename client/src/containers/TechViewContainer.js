@@ -21,16 +21,18 @@ class TechViewContainer extends Component{
 
   componentDidMount(){
     this.fetchTechStories()
+
+    this.props.fetchSavedStories()
   };
 
   render(){
     return(
       <div>
-      <TechViewList techStories={this.state.techStories}/>
+      <TechViewList className='techView' techStories={this.state.techStories}/>
 
       <SavedStoriesList
-        savedStories={this.props.savedStories}
-        fetchSavedStories={this.props.fetchTechStories}/>
+        className='savedStories'
+        savedStories={this.props.savedStories}/>
       </div>
     );
   }
@@ -40,7 +42,7 @@ class TechViewContainer extends Component{
 
 
 const mapDispatchToProps = dispatch => {
-  return {fetchSavedStories: dispatch(fetchSavedStories())}
+  return {fetchSavedStories: () => dispatch(fetchSavedStories())}
 }
 
 const mapStateToProps = state => {

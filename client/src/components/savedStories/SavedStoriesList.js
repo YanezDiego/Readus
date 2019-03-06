@@ -10,7 +10,7 @@ class SavedStoriesList extends Component {
 
 
   renderSavedStories = () => {
-    return this.props.savedStories.map(storie => <SavedStories key={storie.id} storie={storie}/>)
+    return this.props.savedStories.map(storie => <SavedStories key={storie.id} storie={storie} />)
   };
 
   render(){
